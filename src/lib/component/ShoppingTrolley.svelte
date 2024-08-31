@@ -1,8 +1,16 @@
 <script>
     import { array } from '../data/store.js';
-    import { derived } from 'svelte/store';
+    import { derived, get } from 'svelte/store';
 
+    // @ts-ignore
     const total = derived(array, $array => $array.reduce((sum, item) => sum + parseFloat(item.preco.replace(',', '.')), 0));
+       
+    function mostrarLista() {
+        // @ts-ignore
+        let items = get(array);
+        console.log(items);
+    }
+
 </script>
 
 <div class="area">
@@ -15,14 +23,14 @@
 
     <div class="total">
         <p>Total: R$ {$total.toFixed(2)}</p>
-        <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Comprar</button>
+        <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" on:click={mostrarLista}>Comprar</button>
     </div>
 </div>
 
 <style>
     .area {
         display: flex;
-        width: 300px;
+        width: 30%;
         flex-direction: column;
         gap: 30px;
         border-radius: 8px;

@@ -2,12 +2,12 @@ export const comidasData = [
     {
         "nome": "Massas",
         "imagem": "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/massas_XoY0.png?imwidth=128",
-        "preco": "1.000"
+        "preco": "1000"
     },
     {
         "nome": "Marmita",
         "imagem": "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/marmitaria_3fbr.png?imwidth=128",
-        "preco": 1000
+        "preco": "1000"
     },
     {
         "nome": "Estrogonofe",
@@ -17,7 +17,7 @@ export const comidasData = [
     {
         "nome": "Carne",
         "imagem": "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/carne_oHSg.png?imwidth=128",
-        "preco": "1.000"
+        "preco": "1000"
     },
     {
         "nome": "Parmegiana",
