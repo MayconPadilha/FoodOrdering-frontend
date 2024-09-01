@@ -1,16 +1,15 @@
 <script>
-    import { array } from '../data/store.js';
-    import { derived, get } from 'svelte/store';
+	import { array } from '../data/store.js';
+	import { derived, get } from 'svelte/store';
 
-    // @ts-ignore
-    const total = derived(array, $array => $array.reduce((sum, item) => sum + parseFloat(item.preco.replace(',', '.')), 0));
-       
-    function mostrarLista() {
-        // @ts-ignore
-        let items = get(array);
-        console.log(items);
-    }
+	// @ts-ignore
+	const total = derived(array, ($array) => $array.reduce((sum, item) => sum + item.preco, 0));
 
+	function mostrarLista() {
+		// @ts-ignore
+		let items = get(array);
+		console.log(items);
+	}
 </script>
 
 <div class="area">
