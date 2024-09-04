@@ -10,7 +10,7 @@
 	let searchTerm = '';
 
 	$: filteredFood = comidasData.filter((food) => {
-		let foodName = food.nome.toLocaleLowerCase();
+		let foodName = food.name.toLocaleLowerCase();
 		return foodName.includes(searchTerm.toLocaleLowerCase());
 	});
 
@@ -23,12 +23,12 @@
 		{#if searchTerm && filteredFood.length === 0}
 			<h1>sem resultados</h1>
 		{:else if filteredFood.length > 0}
-			{#each filteredFood as { nome, imagem, preco }}
-				<CardProdutos {nome} {imagem} {preco}/>
+			{#each filteredFood as { name, image, unit_price }}
+				<CardProdutos {name} {image} {unit_price}/>
 			{/each}
 		{:else}
-			{#each comidasData as { nome, imagem, preco }}
-				<CardProdutos {nome} {imagem} {preco}/>
+			{#each comidasData as { name, image, unit_price }}
+				<CardProdutos {name} {image} {unit_price}/>
 			{/each}
 		{/if}
 	</section>

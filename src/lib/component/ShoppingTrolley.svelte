@@ -6,16 +6,16 @@
 	import { array } from '../data/store.js';
 	import { derived, get } from 'svelte/store';
 
-	const total = derived(array, ($array) => $array.reduce((sum, item) => sum + item.preco, 0));
+	const total = derived(array, ($array) => $array.reduce((sum, item) => sum + item.unit_price, 0));
 
-    function itensUnicos(array) {
-        const seen = new Set();
-        return array.filter(item => {
-            const duplicate = seen.has(item.nome);
-            seen.add(item.nome);
-            return !duplicate;
-        });
-    }
+    // function itensUnicos(array) {
+    //     const seen = new Set();
+    //     return array.filter(item => {
+    //         const duplicate = seen.has(item.nome);
+    //         seen.add(item.nome);
+    //         return !duplicate;
+    //     });
+    // }
 
     let isEnabled = false;
 
@@ -47,7 +47,7 @@
     </div>
 
     <div class="flex flex-col gap-3">
-        {#each itensUnicos($array) as item }
+        {#each $array as item }
             <ShoppingTrolleyItem {item}/>
         {/each}
     </div>          
