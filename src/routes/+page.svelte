@@ -18,8 +18,8 @@
 
 <Search bind:searchTerm />
 
-<main class="flex m-4">
-	<section class="flex flex-wrap w-3/4 justify-center gap-4">
+<main class="flex flex-col-reverse justify-center m-4 gap-4 sm:flex-row">
+	<section class="grid lg:grid-cols-2 md:grid-cols-1 gap-4 content-start justify-center">
 		{#if searchTerm && filteredFood.length === 0}
 			<h1>sem resultados</h1>
 		{:else if filteredFood.length > 0}

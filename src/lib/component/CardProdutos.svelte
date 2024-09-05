@@ -11,7 +11,7 @@
 	}
 </script>
 
-<div class="card flex h-fit p-2 rounded-lg h-min-fit shadow dark:bg-gray-800 gap-2 w-auto">
+<div class="flex h-fit p-2 rounded-lg h-min-fit shadow dark:bg-gray-800 gap-2">
 	<div class="flex items-center justify-center basis-4/12">
 		<img class="w-44 h-auto" src={image} alt="product {name}" />
 	</div>
