@@ -23,12 +23,12 @@
 		{#if searchTerm && filteredFood.length === 0}
 			<h1>sem resultados</h1>
 		{:else if filteredFood.length > 0}
-			{#each filteredFood as { name, image, unit_price }}
-				<CardProdutos {name} {image} {unit_price}/>
+			{#each filteredFood as { product_id, name, image, unit_price }}
+				<CardProdutos {product_id} {name} {image} {unit_price}/>
 			{/each}
 		{:else}
-			{#each comidasData as { name, image, unit_price }}
-				<CardProdutos {name} {image} {unit_price}/>
+			{#each comidasData as { product_id, name, image, unit_price }}
+				<CardProdutos {product_id} {name} {image} {unit_price}/>
 			{/each}
 		{/if}
 	</section>

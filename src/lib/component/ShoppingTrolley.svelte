@@ -6,8 +6,7 @@
 	import { array } from '../data/store.js';
 	import { derived, get } from 'svelte/store';
 
-	const total = derived(array, ($array) => $array.reduce((sum, item) => sum + item.unit_price, 0));
-
+    const total = derived(array, ($array) => $array.reduce((sum, item) => sum + item.unit_price * item.quantity, 0));
     // function itensUnicos(array) {
     //     const seen = new Set();
     //     return array.filter(item => {
