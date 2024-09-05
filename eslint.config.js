@@ -15,9 +15,19 @@ export default [
 				...globals.browser,
 				...globals.node
 			}
-		}
+		},
 	},
 	{
 		ignores: ['build/', '.svelte-kit/', 'dist/']
+	},
+	{
+		files: ['**/*.js'],
+		rules: {
+			'@typescript-eslint/no-unused-vars': 'off',
+			'@typescript-eslint/no-explicit-any': 'off',
+			'@typescript-eslint/explicit-module-boundary-types': 'off',
+			'@typescript-eslint/no-var-requires': 'off',
+			'@typescript-eslint/ban-ts-comment': 'off'
+		}
 	}
 ];
