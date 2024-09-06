@@ -19,10 +19,9 @@
 	}
 </script>
 
-<div class="flex justify-between items-start gap-12">
-	<div class="flex flex-col gap-2 font-bold">
+<div class="flex justify-between items-start">
+	<div class="flex flex-col gap-1 font-bold">
 		<h3 class="titulo">{item.name}</h3>
-		<p class="valor text-green-500">R$ {(item.unit_price * item.quantity).toFixed(2)}</p>
 		<div class="flex items-center">
 			<button
 				on:click={() => handleQuantityChange(-1)}
@@ -39,5 +38,8 @@
 			</button>
 		</div>
 	</div>
-	<button on:click={() => removeItem(item.product_id)} class="text-red-500 font-bold">X</button>
+	<div class="flex flex-row gap-5">
+		<h3 class="valor text-green-500">R$ {(item.unit_price * item.quantity).toFixed(2)}</h3>
+		<button on:click={() => removeItem(item.product_id)} class="text-red-500 font-bold">X</button>
+	</div>
 </div>
