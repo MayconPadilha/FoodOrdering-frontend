@@ -1,5 +1,5 @@
 <script>
-	import { cartStore } from '../stores.js';
+	// @ts-nocheck
 	import { removeItem, updateQuantity } from '$lib/utils/cartHandler';
 
 	/**

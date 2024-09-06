@@ -9,14 +9,6 @@
 	const total = derived(cartStore, ($array) =>
 		$array.reduce((sum, item) => sum + item.unit_price * item.quantity, 0)
 	);
-	// function itensUnicos(array) {
-	//     const seen = new Set();
-	//     return array.filter(item => {
-	//         const duplicate = seen.has(item.nome);
-	//         seen.add(item.nome);
-	//         return !duplicate;
-	//     });
-	// }
 
 	let isEnabled = false;
 
@@ -25,10 +17,10 @@
 
 		if (items !== 0) {
 			isEnabled = true;
-			console.log('foi');
+			// console.log('foi');
 		} else {
 			isEnabled = false;
-			console.log('nao foi');
+			// console.log('nao foi');
 		}
 	}
 
