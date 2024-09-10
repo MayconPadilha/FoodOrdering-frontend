@@ -59,10 +59,8 @@
 
 	<div class="flex items-center gap-2 justify-between h-auto">
 		<p class="font-bold">Total: R$ {$total.toFixed(2)}</p>
-		<button
-			disabled={!isEnabled}
-			class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-			on:click={enableButton}>Comprar</button
-		>
+		<a href="/shoppingTrolley">
+			<button disabled={!isEnabled} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"on:click={enableButton}> Comprar </button>
+		</a>
 	</div>
 </div>
