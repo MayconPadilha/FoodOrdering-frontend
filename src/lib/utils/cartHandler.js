@@ -21,6 +21,10 @@ export function removeItem(id) {
 	cartStore.update((items) => items.filter((item) => item.product_id !== id));
 }
 
+export function clearCart() {
+	cartStore.set([]);
+}
+
 export function updateQuantity(id, quantity) {
 	cartStore.update((items) =>
 		items.map((item) =>
@@ -29,6 +33,13 @@ export function updateQuantity(id, quantity) {
 	);
 }
 
-export function getCartTotal() {
-	return get(cartStore).reduce((total, item) => total + item.unit_price * item.quantity, 0);
+export const getCartTotal = () => {
+	// let total = derived(cartStore, ($array) =>
+	// 	$array.reduce((total, item) => total + item.unit_price * item.quantity, 0).toFixed(2)
+	// );
+	return get(cartStore).reduce((total, item) => total + item.unit_price * item.quantity, 0).toFixed(2);
 }
+
+// cartStore.update((items) => {
+// 	// console.log(items);
+// })
