@@ -1,32 +1,28 @@
 <script>
 	// @ts-nocheck
-
 	import ShoppingTrolleyItem from './ShoppingTrolleyItem.svelte';
-
 	import { cartStore } from '$lib/stores.js';
-	import { derived, get } from 'svelte/store';
-
-	const total = derived(cartStore, ($array) =>
-		$array.reduce((sum, item) => sum + item.unit_price * item.quantity, 0)
-	);
+	import { get } from 'svelte/store';
+	import { getCartTotal } from '$lib/utils/cartHandler';
 
 	let isEnabled = false;
 
 	function enableButton() {
 		let items = get(cartStore).length;
-
-		if (items !== 0) {
-			isEnabled = true;
-			// console.log('foi');
-		} else {
-			isEnabled = false;
-			// console.log('nao foi');
-		}
+		isEnabled = items !== 0;
+		// if (items !== 0) {
+		// 	isEnabled = true;
+		// 	// console.log('foi');
+		// } else {
+		// 	isEnabled = false;
+		// 	// console.log('nao foi');
+		// }
 	}
 
-	cartStore.subscribe(() => {
+	$: {
+		$cartStore;
 		enableButton();
-	});
+	}
 </script>
 
 <div
@@ -58,9 +54,14 @@
 	</div>
 
 	<div class="flex items-center gap-2 justify-between h-auto">
-		<p class="font-bold">Total: R$ {$total.toFixed(2)}</p>
+		<p class="font-bold">Total: R$ {$getCartTotal}</p>
 		<a href="/shoppingTrolley">
-			<button disabled={!isEnabled} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"on:click={enableButton}> Comprar </button>
+			<button
+				disabled={!isEnabled}
+				class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+			>
+				Comprar
+			</button>
 		</a>
 	</div>
 </div>

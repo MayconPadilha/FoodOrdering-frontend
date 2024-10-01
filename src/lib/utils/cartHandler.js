@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { cartStore } from '$lib/stores';
-import { get } from 'svelte/store';
+import { derived } from 'svelte/store';
 
 export function addToCart(item) {
 	cartStore.update((items) => {
@@ -33,13 +33,6 @@ export function updateQuantity(id, quantity) {
 	);
 }
 
-export const getCartTotal = () => {
-	// let total = derived(cartStore, ($array) =>
-	// 	$array.reduce((total, item) => total + item.unit_price * item.quantity, 0).toFixed(2)
-	// );
-	return get(cartStore).reduce((total, item) => total + item.unit_price * item.quantity, 0).toFixed(2);
-}
-
-// cartStore.update((items) => {
-// 	// console.log(items);
-// })
+export const getCartTotal = derived(cartStore, ($cartItems) =>
+	$cartItems.reduce((total, item) => total + item.unit_price * item.quantity, 0).toFixed(2)
+);
