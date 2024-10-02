@@ -20,7 +20,7 @@
 			<ShoppingTrolleyItem {item} />
 		{/each}
 		<div class="flex flex-row-reverse">
-			<h3 class="font-bold">Total: R$ {$total.toFixed(2)}</h3>
+			<h3 class="font-bold">Total: R$ {$getCartTotal}</h3>
 		</div>
 	</div>
 	<div class="flex flex-row gap-1 p-1 w-full md:w-1/2 lg:w-1/3 justify-between h-auto">
