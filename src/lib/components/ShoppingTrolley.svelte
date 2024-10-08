@@ -19,11 +19,11 @@
 </script>
 
 <div
-	class="flex flex-col h-fit w-64 gap-7 rounded-lg p-4 text-white justify-between dark:bg-gray-800"
+	class="flex flex-col h-fit w-64 gap-7 rounded-lg p-4 justify-between bg-white shadow-lg"
 >
 	<div class="header flex h-auto">
 		<svg
-			class="w-6 h-6 text-gray-800 dark:text-white"
+			class="w-6 h-6 text-gray-800"
 			aria-hidden="true"
 			xmlns="http://www.w3.org/2000/svg"
 			width="24"
@@ -47,11 +47,11 @@
 	</div>
 
 	<div class="flex items-center gap-2 justify-between h-auto">
-		<p class="font-bold">Total: R$ {$getCartTotal}</p>
+		<p class="font-normal">Total: R$ {$getCartTotal}</p>
 		<a href="/confirmacao">
 			<button
 				disabled={!isEnabled}
-				class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+				class="text-white bg-blue-700 hover:bg-red-800 font-medium rounded-lg text-sm px-4 py-1.5 text-center"
 			>
 				Comprar
 			</button>

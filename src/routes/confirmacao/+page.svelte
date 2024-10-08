@@ -7,7 +7,7 @@
 	let zipCode = '', street = '', complement = '', neighborhood = '', city = '';
 
 	let step = 1;
-	let paymentType = 'maquininha';
+	let paymentType = 'cartao';
 
 	function goToNextStep() {
 		event.preventDefault();
@@ -94,21 +94,21 @@
 <form on:submit={handleSend}>
     <div class="{step === 1 ? 'block' : 'hidden'}">
 		<div class="flex flex-col h-fit w-auto m-4 items-center gap-2">
-			<div class="flex flex-col gap-4 p-4 w-full md:w-1/2 lg:w-1/3 rounded-lg text-white dark:bg-gray-800">
+			<div class="flex flex-col gap-4 p-4 w-full md:w-1/2 lg:w-1/3 rounded-lg bg-white shadow-lg">
 				{#each $cartStore as item}
 					<ShoppingTrolleyItem {item} />
 				{/each}
 				<div class="flex flex-row-reverse">
-					<h3 class="font-bold">Total: R$ {$getCartTotal}</h3>
+					<p class="font-normal">Total: R$ {$getCartTotal}</p>
 				</div>
 			</div>
 			<div class="flex flex-row gap-1 p-1 w-full md:w-1/2 lg:w-1/3 justify-between h-auto">
 				<a href="/" class="w-full">
-					<button class="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" on:click={clearCart}>
+					<button class="w-full text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-4 py-2 text-center" on:click={clearCart}>
 						Limpar Carrinho
 					</button>
 				</a>
-				<button on:click={goToNextStep} class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+				<button on:click={goToNextStep} class="w-full text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center">
 					Continuar
 				</button>
 			</div>
@@ -117,35 +117,35 @@
 
     <div class="{step === 2 ? 'block' : 'hidden'}">
         <div class="flex flex-col h-fit w-auto m-4 items-center gap-2">
-            <div class="flex flex-col gap-4 p-4 w-full md:w-1/2 lg:w-1/3 rounded-lg text-white dark:bg-gray-800">
-				<h2 class="text-xl font-bold mb-4 text-white">Detalhes de Entrega</h2>
-				<label class="flex flex-col text-white">Nome do Destinatário
+            <div class="flex flex-col gap-4 p-4 w-full md:w-1/2 lg:w-1/3 rounded-lg bg-white shadow-lg">
+				<h2 class="text-xl font-bold mb-4">Detalhes de Entrega</h2>
+				<label class="flex flex-col">Nome do Destinatário
 					<input type="text" name="name" required class="p-2 border rounded text-black" />
 				</label>
-				<label class="flex flex-col text-white">CEP
+				<label class="flex flex-col">CEP
 					<input type="text" name="zipCode" bind:value={zipCode} required class="p-2 border rounded text-black" on:blur={fetchAddressByZipCode} />
 				</label>
-				<label class="flex flex-col text-white">Rua
+				<label class="flex flex-col">Rua
 					<input type="text" name="street" bind:value={street} required class="p-2 border rounded text-black" />
 				</label>
-				<label class="flex flex-col text-white">Número
+				<label class="flex flex-col">Número
 					<input type="text" name="number" required class="p-2 border rounded text-black" />
 				</label>
-				<label class="flex flex-col text-white">Complemento
+				<label class="flex flex-col">Complemento
 					<input type="text" name="complement" bind:value={complement} class="p-2 border rounded text-black" />
 				</label>
-				<label class="flex flex-col text-white">Bairro
+				<label class="flex flex-col">Bairro
 					<input type="text" name="neighborhood" bind:value={neighborhood} required class="p-2 border rounded text-black" />
 				</label>
-				<label class="flex flex-col text-white">Cidade
+				<label class="flex flex-col">Cidade
 					<input type="text" name="city" bind:value={city} required class="p-2 border rounded text-black" />
 				</label>
 			</div>
             <div class="flex flex-row gap-1 p-1 w-full md:w-1/2 lg:w-1/3 justify-between h-auto">
-                <button on:click={goToPrevStep} class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <button on:click={goToPrevStep} class="w-full text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center">
                     Voltar
                 </button>
-                <button on:click={goToNextStep} class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <button on:click={goToNextStep} class="w-full text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center">
                     Continuar
                 </button>
             </div>
@@ -155,22 +155,22 @@
     <div class="{step === 3 ? 'block' : 'hidden'}">
         <div>
             <div class="flex flex-col h-fit w-auto m-4 items-center gap-2">
-                <div class="flex flex-row gap-4 p-4 w-full md:w-1/2 lg:w-1/3 bg-white dark:bg-gray-800 rounded-lg shadow">
-                    <button class="select-none justify-center content-center w-full rounded flex flex-col items-center bg-white cursor-pointer" on:click={() => handlePaymentSelection('maquininha')}>
-                        <div class="icon flex justify-center w-5">
+                <div class="flex flex-row gap-4 p-4 w-full md:w-1/2 lg:w-1/3 bg-white rounded-lg shadow-lg">
+                    <button class="{paymentType === 'cartao' ? 'rounded-6px] border-2 border-[#b91c1c]' : ''} select-none justify-center content-center w-full p-2 rounded flex flex-col items-center bg-white cursor-pointer" on:click={() => handlePaymentSelection('cartao')}>
+                        <div class="flex justify-center h-5">
                             <img src="/image/paymentCredit.svg" alt="Forma de Pagamento" />
                         </div>
-                        <p>Maquininha</p>
+                        <p class="h-5">Cartão</p>
                     </button>
-                    <button class="select-none justify-center content-center w-full rounded flex flex-col items-center bg-white" on:click={() => handlePaymentSelection('dinheiro')}>
-                        <div class="icon flex justify-center w-5">
-                            <img src="/image/paymentCash.svg" alt="Forma de Pagamento" />
+                    <button class="{paymentType === 'dinheiro' ? 'rounded-[6px] border-2 border-[#b91c1c]' : ''} select-none justify-center content-center p-2 w-full rounded flex flex-col items-center bg-white" on:click={() => handlePaymentSelection('dinheiro')}>
+                        <div class="flex justify-center h-5">
+                            <img class="h-4" src="/image/paymentCash.svg" alt="Forma de Pagamento" />
                         </div>
-                        <p>Dinheiro</p>
+                        <p class="h-5">Dinheiro</p>
                     </button>
                 </div>
 
-                <div class="{paymentType === 'maquininha' ? 'block' : 'hidden'} flex flex-col gap-4 p-4 w-full md:w-1/2 lg:w-1/3 bg-white text-white dark:bg-gray-800 rounded-lg shadow">
+                <div class="{paymentType === 'cartao' ? 'block' : 'hidden'} flex flex-col gap-4 p-4 w-full md:w-1/2 lg:w-1/3 bg-white rounded-lg shadow-lg">
 					<div>
 						<ul>
 							<li>
@@ -185,20 +185,56 @@
 									Mastercard (crédito)
 								</label>
 							</li>
+							<li>
+								<label>
+									<input type="radio" name="payment-method" value="American Express (crédito)" />
+									American Express (crédito)
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="payment-method" value="Elo (crédito)" />
+									Elo (crédito)
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="payment-method" value="Hipercard (crédito)" />
+									Hipercard (crédito)
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="payment-method" value="Visa (débito)" />
+									Visa (débito)
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="payment-method" value="Mastercard (débito)" />
+									Mastercard (débito)
+								</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="payment-method" value="PayPal" />
+									PayPal
+								</label>
+							</li>
 						</ul>
-					</div>
+					</div>					
                 </div>
 
-                <div class="{paymentType === 'dinheiro' ? 'block' : 'hidden'} flex flex-col gap-4 p-4 w-full md:w-1/2 lg:w-1/3 bg-white dark:bg-gray-800 rounded-lg shadow">
-					<label class="text-white">Troco
+                <div class="{paymentType === 'dinheiro' ? 'block' : 'hidden'} flex flex-col gap-4 p-4 w-full md:w-1/2 lg:w-1/3 bg-white rounded-lg shadow-lg ">
+					<label>Troco
 						<input type="number" name="troco" placeholder="0,00" class="p-2 border rounded text-black" />
 					</label>
                 </div>
 				<div class="flex flex-row gap-1 p-1 w-full md:w-1/2 lg:w-1/3 justify-between h-auto">
-					<button on:click={goToPrevStep} class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+					<button on:click={goToPrevStep} class="w-full text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center">
 						Voltar
 					</button>
-					<button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+					<button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center">
 						Finalizar Compra
 					</button>
 				</div>

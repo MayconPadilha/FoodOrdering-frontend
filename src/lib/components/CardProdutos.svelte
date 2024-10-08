@@ -16,27 +16,33 @@
 	}
 </script>
 
-<div class="flex h-fit p-2 rounded-lg h-min-fit shadow dark:bg-gray-800 gap-2">
+<div class="flex h-fit p-2 rounded-lg h-min-fit shadow-lg bg-white gap-2 hover:shadow-red-300">
 	<div class="flex items-center justify-center basis-4/12">
 		<img class="w-44 h-auto" src={item.image} alt="produto {item.name}" />
 	</div>
 
 	<div class="flex flex-col basis-8/12 gap-3">
 		<div class="h-3/6">
-			<h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+			<h5 class="text-lg font-semibold tracking-tight text-red-700">
 				{item.name}
 			</h5>
-			<h6 class="text-x2 font-semibold tracking-tight text-gray-900 dark:text-white">
+			<h6 class="text-base font-normal tracking-tight text-gray-900">
 				Uma descrição dos produtos aqui
 			</h6>
 		</div>
 
 		<div class="flex flex-row justify-between items-center h-3/6">
-			<span class="font-bold text-gray-900 dark:text-white text-xl"
-				>R$ {item.unit_price.toFixed(2)}</span
-			>
+			<div class="gap-1">
+				<span class="font-normal text-gray-600">
+					A partir de
+				</span>
+				<span class="font-normal text-gray-950 tracking-tight"
+					>R$ {item.unit_price.toFixed(2)}</span
+				>
+			</div>
+			
 			<button
-				class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+				class="text-white bg-blue-700 hover:bg-red-800 font-medium rounded-lg text-sm px-4 py-1.5 text-center"
 				on:click={handleAddToCart}>Adicionar</button
 			>
 		</div>
