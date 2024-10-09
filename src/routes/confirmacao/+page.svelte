@@ -52,15 +52,27 @@
 		const data = new FormData(event.target);
 
 		const obj = {};
+		const delivery_address = {};
+		const payment = {};
+
 		data.forEach((value, key) => {
-			obj[key] = value;
-		});	
-	
-		if (paymentType === 'dinheiro') {
-			obj.payment_method = paymentType;
-		} else {
-			obj.troco = '';
-		}
+			if (key === 'payment-method') {
+				payment.payment_method = value;
+				
+			} else if (key === 'troco') {
+				if(paymentType === 'cartao'){
+					payment.troco = '';
+				} else {
+					payment.payment_method = paymentType;
+					payment.troco = value;
+				}
+			} else {
+				delivery_address[key] = value;
+			}
+		});
+
+		obj.delivery_address = delivery_address;
+		obj.payment = payment;
 
 		obj.items = $cartStore.map(item => ({
 			id: item.product_id,
@@ -69,6 +81,7 @@
 			quantity: item.quantity
 		}));
 
+		obj.status = 'pending';
 		obj.total_price = $getCartTotal;
 
 		console.log(obj);
@@ -84,10 +97,11 @@
 	};
 
 	function uncheckAllRadios() {
-    const radioButtons = document.querySelectorAll('input[type="radio"][name="payment-method"]');
-    radioButtons.forEach(radio => {
-        radio.checked = false;
-    });
+		const radioButtons = document.querySelectorAll('input[type="radio"][name="payment-method"]');
+		radioButtons.forEach(radio => {
+			radio.checked = false;
+		}
+	);
 }
 </script>
 

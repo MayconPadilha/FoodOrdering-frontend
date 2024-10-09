@@ -181,7 +181,10 @@ const order = {
     city: String,
     zipCode: String,
   },
-  payment_method: String, // "credit_card", "debit_card", "pix", etc.
+  payment: {
+    payment_method: String, // "credit_card", "debit_card", "pix", etc.
+    troco: String,
+  },
   status: String, // "pending", "preparing", "out_for_delivery", "delivered", "cancelled"
   created_at: Date,
   updated_at: Date,
