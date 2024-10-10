@@ -19,7 +19,7 @@
 </script>
 
 <div
-	class="flex flex-col h-fit w-64 gap-7 rounded-lg p-4 justify-between bg-white shadow-lg"
+	class="flex flex-col h-fit w-100 lg:w-64 gap-7 rounded-lg p-4 justify-between bg-white shadow-lg"
 >
 	<div class="header flex h-auto">
 		<svg
