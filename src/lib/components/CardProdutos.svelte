@@ -16,7 +16,7 @@
 	}
 </script>
 
-<div class="flex h-fit p-2 rounded-lg h-min-fit shadow-lg bg-white gap-2 hover:shadow-red-300">
+<div class="flex h-fit p-2 rounded-lg h-min-fit shadow-lg bg-white gap-2 hover:shadow-red-300 transition-shadow duration-300 ease-in-out">
 	<div class="flex items-center justify-center basis-4/12">
 		<img class="w-44 h-auto" src={item.image} alt="produto {item.name}" />
 	</div>
