@@ -1,2 +1,2 @@
-export const category = ['Pizza', 'Parmegiana','Massas', 'Marmita', 'Estrogonofe', 'Carne', 'Burger', 'Xis', 'Bebidas' ]
+export const category = ['Alaminuta', 'Pizza', 'Massas', 'Xis', 'Burger',  'Bebidas' ]
 
