@@ -29,7 +29,9 @@
 		</section>
 	{:else }
 		{#if filteredFood.length === 0}
-			<h1>Sem resultados</h1>
+			<section class="flex flex-col items-center w-2/3">
+				<h1>Sem resultados</h1>
+			</section>
 		{:else}
 			<section class="grid lg:grid-cols-2 md:grid-cols-1 gap-4 content-start justify-center">
 				{#each filteredFood as item (item.product_id)}
