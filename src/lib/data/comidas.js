@@ -5,7 +5,8 @@ export const comidasData = [
         image: "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/massas_XoY0.png?imwidth=128",
         unit_price: 25.59,
         category: "Massas",
-        quantity: 0
+        quantity: 0,
+        description: "Deliciosas massas frescas com molho caseiro.",
     },
     {
         product_id: 2,
@@ -13,7 +14,8 @@ export const comidasData = [
         image: "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/marmitaria_3fbr.png?imwidth=128",
         unit_price: 16.90,
         category: "Marmita",
-        quantity: 0        
+        quantity: 0,
+        description: "Marmitas saborosas e equilibradas para o seu dia.",
     },
     {
         product_id: 3,
@@ -21,7 +23,8 @@ export const comidasData = [
         image: "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/estrogonofe_fB7q.png?imwidth=128",
         unit_price: 25.90,
         category: "Estrogonofe",
-        quantity: 0
+        quantity: 0,
+        description: "Estrogonofe de carne ou frango com um toque especial.",
     },
     {
         product_id: 4,
@@ -29,7 +32,8 @@ export const comidasData = [
         image: "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/carne_oHSg.png?imwidth=128",
         unit_price: 24.99,
         category: "Carne",
-        quantity: 0
+        quantity: 0,
+        description: "Cortes de carne selecionados e preparados com perfeição.",
     },
     {
         product_id: 5,
@@ -37,7 +41,8 @@ export const comidasData = [
         image: "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/parmegiana_TXeR.png?imwidth=128",
         unit_price: 22.90,
         category: "Parmegiana",
-        quantity: 0
+        quantity: 0,
+        description: "Parmegiana crocante e saborosa, acompanhada de molho especial.",
     },
     {
         product_id: 6,
@@ -45,7 +50,8 @@ export const comidasData = [
         image: "https://img.deliverydireto.com.br/unsafe/100x100/https://duisktnou8b89.cloudfront.net/img/items/66ff086f06fa9.png",
         unit_price: 22.90,
         category: "Pizza",
-        quantity: 0
+        quantity: 0,
+        description: "Pizza com sabores combinados de frango e calabresa.",
     },
     {
         product_id: 7,
@@ -53,7 +59,8 @@ export const comidasData = [
         image: "https://img.deliverydireto.com.br/unsafe/100x100/https://duisktnou8b89.cloudfront.net/img/items/66ff07fd7840b.png",
         unit_price: 22.90,
         category: "Pizza",
-        quantity: 0
+        quantity: 0,
+        description: "Pizza deliciosa com metades de calabresa e portuguesa.",
     },
     {
         product_id: 8,
@@ -61,7 +68,8 @@ export const comidasData = [
         image: "https://img.deliverydireto.com.br/unsafe/100x100/https://duisktnou8b89.cloudfront.net/img/items/66ff074bd8343.png",
         unit_price: 22.90,
         category: "Pizza",
-        quantity: 0
+        quantity: 0,
+        description: "Pizza especial com metade quatro queijos e metade frango.",
     },
     {
         product_id: 9,
@@ -69,7 +77,8 @@ export const comidasData = [
         image: "https://app.jotaja.com/_next/image?url=https%3A%2F%2Fimagens.jotaja.com%2Fprodutos%2F8f1654fc-8dee-40a2-ba27-2fe0e86cee30.jpg&w=96&q=75",
         unit_price: 15.90,
         category: "Burger",
-        quantity: 0
+        quantity: 0,
+        description: "Burger clássico com ingredientes frescos e de qualidade.",
     },
     {
         product_id: 10,
@@ -77,7 +86,8 @@ export const comidasData = [
         image: "https://www.pintoburguer.com.br/wp-content/uploads/2021/09/Xis-Tudo.jpg",
         unit_price: 18.90,
         category: "Xis",
-        quantity: 0
+        quantity: 0,
+        description: "Xis Bacon suculento com bacon crocante e queijo derretido.",
     },
     {
         product_id: 11,
@@ -85,7 +95,8 @@ export const comidasData = [
         image: "https://img.deliverydireto.com.br/unsafe/100x100/https://duisktnou8b89.cloudfront.net/img/items/635fdd914e529.jpeg",
         unit_price: 8.50,
         category: "Bebidas",
-        quantity: 0
+        quantity: 0,
+        description: "Suco de laranja natural e refrescante.",
     },
     {
         product_id: 12,
@@ -93,7 +104,8 @@ export const comidasData = [
         image: "https://app.jotaja.com/_next/image?url=https%3A%2F%2Fimagens.jotaja.com%2Fprodutos%2Fcc4aac6f-ca72-4613-9d73-701fc3f75ff8.jpg&w=96&q=75",
         unit_price: 6.00,
         category: "Bebidas",
-        quantity: 0
+        quantity: 0,
+        description: "Refrigerante Coca-Cola, o sabor clássico que todos amam.",
     },
     {
         product_id: 13,
@@ -101,7 +113,8 @@ export const comidasData = [
         image: "https://app.jotaja.com/_next/image?url=https%3A%2F%2Fimagens.jotaja.com%2Fprodutos%2F3b8ac136-34b6-4d67-ad2c-9325485ce529.jpg&w=96&q=75",
         unit_price: 12.00,
         category: "Bebidas",
-        quantity: 0
+        quantity: 0,
+        description: "Cerveja gelada e refrescante para todas as ocasiões.",
     },
     {
         product_id: 14,
@@ -109,6 +122,16 @@ export const comidasData = [
         image: "https://img.deliverydireto.com.br/unsafe/100x100/https://duisktnou8b89.cloudfront.net/img/items/62705779570e1.png",
         unit_price: 3.50,
         category: "Bebidas",
-        quantity: 0
-    }
+        quantity: 0,
+        description: "Água mineral pura e saudável.",
+    },
+    {
+        product_id: 15,
+        name: "Xis Strogonoff",
+        image: "https://www.pintoburguer.com.br/wp-content/uploads/2021/09/Xis-Tudo.jpg",
+        unit_price: 18.90,
+        category: "Xis",
+        quantity: 0,
+        description: "Xis Strogonoff, uma deliciosa combinação de sabores.",
+    },
 ];
